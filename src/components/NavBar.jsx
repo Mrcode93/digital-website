@@ -96,7 +96,7 @@
 // }
 
 import { useState, useEffect } from "react";
-import sound from "../assets/mixkit-hard-pop-click-2364.wav";
+import sound from "../assets/light-switch-156813.mp3";
 import { Link, useLocation } from "react-router-dom";
 
 const NavBar = () => {

@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Header from "../components/Header";
-import NavBar from "../components/NavBar";
 // import comments icon and  likes
 import { FaComments, FaThumbsUp } from "react-icons/fa";
 import Loader from "../components/loader";
@@ -29,25 +27,26 @@ const Blog = () => {
 
   return (
     <div className="blog">
-      <Header />
-      <NavBar />
+      {" "}
       <div className="main">
+        {" "}
         {blogs.reverse().map((blog) => (
           <div key={blog._id}>
-            <h3>{blog.title}</h3>
-            <p>{blog.description}</p>
-            {/* Coordinate the time of the blog */}
-            <p>{new Date(blog.createdAt).toLocaleString()}</p>
-
-            {/* comments and likes */}
+            <h3> {blog.title} </h3> <p className="desc"> {blog.description} </p>{" "}
+            {/* Coordinate the time of the blog */}{" "}
+            <p className="date">
+              {" "}
+              {new Date(blog.createdAt).toLocaleString()}{" "}
+            </p>{" "}
+            {/* comments and likes */}{" "}
             <div className="icons">
               <FaComments />
               <FaThumbsUp />
-            </div>
-            <div className="line"></div>
+            </div>{" "}
+            <div className="line"> </div>{" "}
           </div>
-        ))}
-      </div>
+        ))}{" "}
+      </div>{" "}
     </div>
   );
 };

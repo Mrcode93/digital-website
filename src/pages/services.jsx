@@ -1,14 +1,19 @@
-import Header from "../components/Header";
-import NavBar from "../components/NavBar";
-
 const services = () => {
   return (
     <div className="services">
-      <Header />
-      <NavBar />
       <h1>Services</h1>
       <div className="main">
         <div className="box">
+          <span className="pixel-1"></span>
+          <span className="pixel-2"></span>
+          <span className="pixel-3"></span>
+          <span className="pixel-4"></span>
+          <span className="pixel-5"></span>
+          <span className="pixel-6"></span>
+          <span className="pixel-7"></span>
+          <span className="pixel-8"></span>
+          <span className="pixel-9"></span>
+          <span className="pixel-10"></span>
           <h3>Website Development</h3>
           <p>
             Get a professionally designed and fully functional website tailored
@@ -17,6 +22,16 @@ const services = () => {
           </p>
         </div>
         <div className="box">
+          <span className="pixel-1"></span>
+          <span className="pixel-2"></span>
+          <span className="pixel-3"></span>
+          <span className="pixel-4"></span>
+          <span className="pixel-5"></span>
+          <span className="pixel-6"></span>
+          <span className="pixel-7"></span>
+          <span className="pixel-8"></span>
+          <span className="pixel-9"></span>
+          <span className="pixel-10"></span>
           <h3>Responsive Design</h3>
           <p>
             Ensure your website looks stunning and functions flawlessly on all
@@ -25,6 +40,16 @@ const services = () => {
           </p>
         </div>
         <div className="box">
+          <span className="pixel-1"></span>
+          <span className="pixel-2"></span>
+          <span className="pixel-3"></span>
+          <span className="pixel-4"></span>
+          <span className="pixel-5"></span>
+          <span className="pixel-6"></span>
+          <span className="pixel-7"></span>
+          <span className="pixel-8"></span>
+          <span className="pixel-9"></span>
+          <span className="pixel-10"></span>
           <h3>Custom Solutions</h3>
           <p>
             Need a unique feature or functionality on your website? Our team can
@@ -33,6 +58,16 @@ const services = () => {
           </p>
         </div>
         <div className="box">
+          <span className="pixel-1"></span>
+          <span className="pixel-2"></span>
+          <span className="pixel-3"></span>
+          <span className="pixel-4"></span>
+          <span className="pixel-5"></span>
+          <span className="pixel-6"></span>
+          <span className="pixel-7"></span>
+          <span className="pixel-8"></span>
+          <span className="pixel-9"></span>
+          <span className="pixel-10"></span>
           <h3>E-commerce Development</h3>
           <p>
             Launch your online store with our e-commerce development services.
@@ -41,6 +76,16 @@ const services = () => {
           </p>
         </div>
         <div className="box">
+          <span className="pixel-1"></span>
+          <span className="pixel-2"></span>
+          <span className="pixel-3"></span>
+          <span className="pixel-4"></span>
+          <span className="pixel-5"></span>
+          <span className="pixel-6"></span>
+          <span className="pixel-7"></span>
+          <span className="pixel-8"></span>
+          <span className="pixel-9"></span>
+          <span className="pixel-10"></span>
           <h3>SEO Optimization</h3>
           <p>
             Improve your website&apos;s visibility on search engines with our
@@ -49,6 +94,16 @@ const services = () => {
           </p>
         </div>
         <div className="box">
+          <span className="pixel-1"></span>
+          <span className="pixel-2"></span>
+          <span className="pixel-3"></span>
+          <span className="pixel-4"></span>
+          <span className="pixel-5"></span>
+          <span className="pixel-6"></span>
+          <span className="pixel-7"></span>
+          <span className="pixel-8"></span>
+          <span className="pixel-9"></span>
+          <span className="pixel-10"></span>
           <h3>Maintenance and Support</h3>
           <p>
             Keep your website running smoothly with our maintenance and support

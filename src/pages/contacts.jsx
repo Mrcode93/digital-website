@@ -1,6 +1,4 @@
 import { useState } from "react";
-import Header from "../components/Header";
-import NavBar from "../components/NavBar";
 import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiTwitter } from "react-icons/si";
 
@@ -43,17 +41,17 @@ const Contacts = () => {
 
   return (
     <div className="contacts">
-      <Header />
-      <NavBar />
       <div className="main">
         <h1> Contact Me </h1>{" "}
         <ul className="contacts-list">
           <li>
             <FaEnvelope /> Email:{" "}
-            <a href="ameralazawi69@gmail.com">ameralazawi</a>
+            <a href="mailto:ameralazawi69@gmail.com" target="_blank">
+              ameralazawi
+            </a>
           </li>{" "}
           <li>
-            <FaLinkedin /> LinkedIn: https:
+            <FaLinkedin /> LinkedIn:
             <a
               href="https://www.linkedin.com/in/amer-farhan-226155194/"
               target="_blank"
@@ -62,10 +60,12 @@ const Contacts = () => {
             </a>
           </li>{" "}
           <li>
-            <FaGithub /> GitHub: github.com / Mrcode93{" "}
+            <FaGithub /> GitHub:
+            <a href="https://github.com/Mrcode93">Mrcode93 </a>
           </li>{" "}
           <li>
-            <SiTwitter /> Twitter: twitter.com / Amer
+            <SiTwitter /> Twitter:
+            <a href="https://twitter.com/AmerFarhan">AmerFarhan</a>
           </li>{" "}
         </ul>{" "}
         <form onSubmit={handleSubmit}>

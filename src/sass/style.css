@@ -118,6 +118,96 @@ input {
   align-items: center;
   width: 100vw;
   min-height: 100%;
+  position: relative;
+}
+.home .main .pixel-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #2d3142;
+}
+.home .main .pixel-2 {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #2d3142;
+  z-index: 1;
+}
+.home .main .pixel-3 {
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  width: 10px;
+  height: 10px;
+  background-color: #2d3142;
+  z-index: 1;
+}
+.home .main .pixel-4 {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  width: 10px;
+  height: 10px;
+  background-color: #2d3142;
+  z-index: 1;
+}
+.home .main .pixel-5 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #2d3142;
+  z-index: 1;
+}
+.home .main .pixel-6 {
+  position: absolute;
+  top: 5px;
+  right: 30px;
+  width: 10px;
+  height: 10px;
+  background-color: #2d3142;
+  z-index: 1;
+}
+.home .main .pixel-7 {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #2d3142;
+  z-index: 1;
+}
+.home .main .pixel-8 {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #2d3142;
+}
+.home .main .pixel-9 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #2d3142;
+  z-index: 1;
+}
+.home .main .pixel-10 {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #2d3142;
+  z-index: 1;
 }
 .home .main .description {
   /* Base styles for the "description" container */
@@ -168,6 +258,19 @@ input {
     border-color: transparent;
   }
 }
+.home .scattered-text {
+  display: inline-block;
+}
+.home .scattered-text span {
+  opacity: 0;
+  animation: scatterEffect 1.5s forwards;
+}
+@keyframes scatterEffect {
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
 
 .header {
   display: flex;
@@ -177,6 +280,7 @@ input {
   padding: 0.5rem;
   width: 100%;
   margin: 0 auto;
+  position: relative;
   background-color: #2d3142;
 }
 .header .logo {
@@ -187,6 +291,94 @@ input {
   align-items: center;
   font-size: 3rem;
   color: #efd6ac;
+}
+.header .pixel-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+}
+.header .pixel-2 {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
+}
+.header .pixel-3 {
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
+}
+.header .pixel-4 {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
+}
+.header .pixel-5 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
+}
+.header .pixel-6 {
+  position: absolute;
+  top: 5px;
+  right: 30px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
+}
+.header .pixel-7 {
+  position: absolute;
+  bottom: 10px;
+  right: 100px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
+}
+.header .pixel-8 {
+  position: absolute;
+  bottom: 10px;
+  left: 50px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+}
+.header .pixel-9 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
+}
+.header .pixel-10 {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
 }
 
 @media screen and (max-width: 768px) {
@@ -251,17 +443,11 @@ input {
   margin-bottom: 0.5rem;
   padding: 0.5rem;
 }
-.blog .main p {
-  color: #432534;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
 .blog .main hr {
   border-color: #ffffff;
   margin: 1rem 0;
 }
 .blog .main .timestamp {
-  color: #ffffff;
   font-size: 1rem;
 }
 .blog .main .icons {
@@ -278,6 +464,16 @@ input {
   font-size: 2rem;
   cursor: pointer;
 }
+.blog .main .desc {
+  width: 100%;
+  font-size: 1rem;
+  animation: slideUp 0.5s ease-in-out;
+}
+.blog .main .desc p {
+  font-size: 0.8rem;
+  color: #432534;
+  line-height: 1.5;
+}
 .blog .main div {
   padding: 1rem;
 }
@@ -286,6 +482,11 @@ input {
   height: 1px;
   background-color: #183a37;
   margin-bottom: 0.5rem;
+}
+.blog .date {
+  color: #c44900;
+  font-size: 0.7rem;
+  text-decoration: underline;
 }
 
 .nav {
@@ -355,6 +556,7 @@ input {
   grid-gap: 1rem;
 }
 .services .main .box {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -372,6 +574,95 @@ input {
   color: #ffffff;
   font-size: 0.9rem;
   text-align: center;
+}
+.services .main .box .pixel-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+}
+.services .main .box .pixel-2 {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
+}
+.services .main .box .pixel-3 {
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
+}
+.services .main .box .pixel-4 {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
+}
+.services .main .box .pixel-5 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
+}
+.services .main .box .pixel-6 {
+  position: absolute;
+  top: 5px;
+  right: 30px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
+}
+.services .main .box .pixel-7 {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
+}
+.services .main .box .pixel-8 {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+}
+.services .main .box .pixel-9 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
+}
+.services .main .box .pixel-10 {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
 }
 
 .skills {
@@ -419,12 +710,102 @@ input {
   background-color: #2d3142;
   color: #fff;
   height: 150px;
+  position: relative;
 }
 .skills .main .skills-list li svg {
   margin-right: 0.5rem;
   width: 70px;
   height: 70px;
   color: #c44900;
+}
+.skills .main .skills-list li .pixel-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+}
+.skills .main .skills-list li .pixel-2 {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
+}
+.skills .main .skills-list li .pixel-3 {
+  position: absolute;
+  bottom: 0;
+  right: 0px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
+}
+.skills .main .skills-list li .pixel-4 {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
+}
+.skills .main .skills-list li .pixel-5 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
+}
+.skills .main .skills-list li .pixel-6 {
+  position: absolute;
+  top: 5px;
+  right: 30px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
+}
+.skills .main .skills-list li .pixel-7 {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
+}
+.skills .main .skills-list li .pixel-8 {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+}
+.skills .main .skills-list li .pixel-9 {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
+}
+.skills .main .skills-list li .pixel-10 {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background-color: #efd6ac;
+  z-index: 1;
 }
 
 .contacts {
@@ -466,6 +847,9 @@ input {
 }
 .contacts .main .contacts-list li svg {
   margin-right: 0.5rem;
+}
+.contacts .main .contacts-list li a {
+  color: #c44900;
 }
 .contacts .main form {
   width: 100%;
@@ -663,29 +1047,30 @@ input {
   z-index: 1;
 }
 
-.digital-loader-container {
+/* LoadingAnimation.css */
+.loading-animation {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
-}
-
-.digital-loader {
-  display: flex;
   justify-content: center;
-  align-items: center;
+  height: 60vh;
 }
 
-.binary-code {
-  width: 20px;
-  height: 40px;
-  background-color: #c44900;
-  margin: 0 5px;
-  animation: binaryAnimation 1s infinite alternate;
+.scattered-text {
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
 }
 
-@keyframes binaryAnimation {
+.scattered-text span {
+  opacity: 0;
+  animation: scatterEffect 1.5s forwards infinite alternate;
+  -webkit-animation: scatterEffect 1.5s forwards infinite alternate;
+}
+
+@keyframes scatterEffect {
   to {
-    transform: scaleY(2);
+    opacity: 1;
+    transform: translate(0);
   }
 }/*# sourceMappingURL=style.css.map */

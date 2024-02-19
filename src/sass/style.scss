@@ -195,6 +195,96 @@ input {
     align-items: center;
     width: 100vw;
     min-height: 100%;
+    position: relative;
+    .pixel-1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      background-color: $cards-color-text;
+    }
+    .pixel-2 {
+      position: absolute;
+      top: 0;
+      right: 10px;
+      width: 10px;
+      height: 10px;
+      background-color: $cards-color-text;
+      z-index: 1;
+    }
+    .pixel-3 {
+      position: absolute;
+      bottom: 0;
+      right: 0px;
+      width: 10px;
+      height: 10px;
+      background-color: $cards-color-text;
+      z-index: 1;
+    }
+    .pixel-4 {
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      width: 10px;
+      height: 10px;
+      background-color: $cards-color-text;
+      z-index: 1;
+    }
+    .pixel-5 {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 10px;
+      height: 10px;
+      background-color: $cards-color-text;
+      z-index: 1;
+    }
+    .pixel-6 {
+      position: absolute;
+      top: 5px;
+      right: 30px;
+      width: 10px;
+      height: 10px;
+      background-color: $cards-color-text;
+      z-index: 1;
+    }
+    .pixel-7 {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      width: 10px;
+      height: 10px;
+      background-color: $cards-color-text;
+      z-index: 1;
+    }
+    .pixel-8 {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      width: 10px;
+      height: 10px;
+      background-color: $cards-color-text;
+    }
+    .pixel-9 {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 10px;
+      height: 10px;
+      background-color: $cards-color-text;
+      z-index: 1;
+    }
+    .pixel-10 {
+      position: absolute;
+      top: 50px;
+      right: 10px;
+      width: 10px;
+      height: 10px;
+      background-color: $cards-color-text;
+      z-index: 1;
+    }
     // padding: 10px;
     .description {
       /* Base styles for the "description" container */
@@ -257,6 +347,19 @@ input {
       }
     }
   }
+  .scattered-text {
+    display: inline-block;
+  }
+  .scattered-text span {
+    opacity: 0;
+    animation: scatterEffect 1.5s forwards;
+  }
+  @keyframes scatterEffect {
+    to {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
 }
 
 .header {
@@ -264,6 +367,7 @@ input {
   padding: 0.5rem;
   width: 100%;
   margin: 0 auto;
+  position: relative;
   // @include animation(fadeIn 0.5s ease-in-out);
   background-color: $cards-color-text;
   .logo {
@@ -271,6 +375,94 @@ input {
     align-items: center;
     font-size: 3rem;
     color: $primary-color;
+  }
+  .pixel-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: $cards-color;
+  }
+  .pixel-2 {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: $cards-color;
+    z-index: 1;
+  }
+  .pixel-3 {
+    position: absolute;
+    bottom: 0;
+    right: 0px;
+    width: 10px;
+    height: 10px;
+    background-color: $cards-color;
+    z-index: 1;
+  }
+  .pixel-4 {
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    width: 10px;
+    height: 10px;
+    background-color: #efd6ac;
+    z-index: 1;
+  }
+  .pixel-5 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: $cards-color;
+    z-index: 1;
+  }
+  .pixel-6 {
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    width: 10px;
+    height: 10px;
+    background-color: #efd6ac;
+    z-index: 1;
+  }
+  .pixel-7 {
+    position: absolute;
+    bottom: 10px;
+    right: 100px;
+    width: 10px;
+    height: 10px;
+    background-color: $cards-color;
+    z-index: 1;
+  }
+  .pixel-8 {
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+    width: 10px;
+    height: 10px;
+    background-color: $cards-color;
+  }
+  .pixel-9 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: $cards-color;
+    z-index: 1;
+  }
+  .pixel-10 {
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: #efd6ac;
+    z-index: 1;
   }
 }
 
@@ -344,17 +536,12 @@ input {
       margin-bottom: 0.5rem;
       padding: 0.5rem;
     }
-    p {
-      color: $primary-text-color;
-      font-size: 1rem;
-      margin-bottom: 1rem;
-    }
     hr {
       border-color: $secondary-color;
       margin: 1rem 0;
     }
     .timestamp {
-      color: $secondary-color-text;
+      // color: $secondary-color-text;
       font-size: 1rem;
     }
     .icons {
@@ -368,6 +555,16 @@ input {
       font-size: 2rem;
       cursor: pointer;
     }
+    .desc {
+      width: 100%;
+      font-size: 1rem;
+      @include animation(slideUp 0.5s ease-in-out);
+      p {
+        font-size: 0.8rem;
+        color: $primary-text-color;
+        line-height: 1.5;
+      }
+    }
     div {
       padding: 1rem;
     }
@@ -377,6 +574,11 @@ input {
     height: 1px;
     background-color: $success-color;
     margin-bottom: 0.5rem;
+  }
+  .date {
+    color: $warning-color;
+    font-size: 0.7rem;
+    text-decoration: underline;
   }
 }
 
@@ -438,6 +640,7 @@ input {
     grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
     grid-gap: 1rem;
     .box {
+      position: relative;
       @include flex();
       flex-direction: column;
       justify-content: center;
@@ -452,6 +655,95 @@ input {
         color: $secondary-color; // Dark burgundy
         font-size: 0.9rem;
         text-align: center;
+      }
+      .pixel-1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        background-color: $cards-color;
+      }
+      .pixel-2 {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        width: 10px;
+        height: 10px;
+        background-color: $cards-color;
+        z-index: 1;
+      }
+      .pixel-3 {
+        position: absolute;
+        bottom: 0;
+        right: 0px;
+        width: 10px;
+        height: 10px;
+        background-color: $cards-color;
+        z-index: 1;
+      }
+      .pixel-4 {
+        position: absolute;
+        bottom: 0;
+        left: 20px;
+        width: 10px;
+        height: 10px;
+        background-color: #efd6ac;
+        z-index: 1;
+      }
+      .pixel-5 {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 10px;
+        height: 10px;
+        background-color: $cards-color;
+        z-index: 1;
+      }
+      .pixel-6 {
+        position: absolute;
+        top: 5px;
+        right: 30px;
+        width: 10px;
+        height: 10px;
+        background-color: #efd6ac;
+        z-index: 1;
+      }
+      .pixel-7 {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        width: 10px;
+        height: 10px;
+        background-color: $cards-color;
+        z-index: 1;
+      }
+      .pixel-8 {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        width: 10px;
+        height: 10px;
+        background-color: $cards-color;
+      }
+      .pixel-9 {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 10px;
+        height: 10px;
+        background-color: $cards-color;
+        z-index: 1;
+      }
+      .pixel-10 {
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        width: 10px;
+        height: 10px;
+        background-color: #efd6ac;
+        z-index: 1;
       }
     }
   }
@@ -494,12 +786,102 @@ input {
         background-color: #2d3142;
         color: #fff;
         height: 150px;
+        position: relative;
         svg {
           margin-right: 0.5rem;
           // change the size of the icon
           width: 70px;
           height: 70px;
           color: $warning-color;
+        }
+        .pixel-1 {
+          position: absolute;
+          top: 0;
+          left: 0;
+          left: 0;
+          width: 10px;
+          height: 10px;
+          background-color: $cards-color;
+        }
+        .pixel-2 {
+          position: absolute;
+          top: 0;
+          right: 10px;
+          width: 10px;
+          height: 10px;
+          background-color: $cards-color;
+          z-index: 1;
+        }
+        .pixel-3 {
+          position: absolute;
+          bottom: 0;
+          right: 0px;
+          width: 10px;
+          height: 10px;
+          background-color: $cards-color;
+          z-index: 1;
+        }
+        .pixel-4 {
+          position: absolute;
+          bottom: 0;
+          left: 20px;
+          width: 10px;
+          height: 10px;
+          background-color: #efd6ac;
+          z-index: 1;
+        }
+        .pixel-5 {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          width: 10px;
+          height: 10px;
+          background-color: $cards-color;
+          z-index: 1;
+        }
+        .pixel-6 {
+          position: absolute;
+          top: 5px;
+          right: 30px;
+          width: 10px;
+          height: 10px;
+          background-color: #efd6ac;
+          z-index: 1;
+        }
+        .pixel-7 {
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          width: 10px;
+          height: 10px;
+          background-color: $cards-color;
+          z-index: 1;
+        }
+        .pixel-8 {
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          width: 10px;
+          height: 10px;
+          background-color: $cards-color;
+        }
+        .pixel-9 {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          width: 10px;
+          height: 10px;
+          background-color: $cards-color;
+          z-index: 1;
+        }
+        .pixel-10 {
+          position: absolute;
+          top: 50px;
+          right: 10px;
+          width: 10px;
+          height: 10px;
+          background-color: #efd6ac;
+          z-index: 1;
         }
       }
     }
@@ -535,6 +917,9 @@ input {
         margin-bottom: 1rem;
         svg {
           margin-right: 0.5rem;
+        }
+        a {
+          color: $warning-color;
         }
       }
     }
@@ -732,30 +1117,31 @@ input {
   }
 }
 
-// DigitalLoader.scss
-.digital-loader-container {
+/* LoadingAnimation.css */
+
+.loading-animation {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
-}
-
-.digital-loader {
-  display: flex;
   justify-content: center;
-  align-items: center;
+  height: 60vh;
 }
 
-.binary-code {
-  width: 20px;
-  height: 40px;
-  background-color: $warning-color; // Green (replace with your desired color)
-  margin: 0 5px;
-  animation: binaryAnimation 1s infinite alternate;
+.scattered-text {
+  font-size: 24px;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
 }
 
-@keyframes binaryAnimation {
+.scattered-text span {
+  opacity: 0;
+  animation: scatterEffect 1.5s forwards infinite alternate;
+  -webkit-animation: scatterEffect 1.5s forwards infinite alternate;
+}
+
+@keyframes scatterEffect {
   to {
-    transform: scaleY(2);
+    opacity: 1;
+    transform: translate(0);
   }
 }

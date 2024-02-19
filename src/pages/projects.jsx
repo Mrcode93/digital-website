@@ -1,6 +1,4 @@
 // projects.jsx
-import Header from "../components/Header";
-import NavBar from "../components/NavBar";
 import { useState, useEffect } from "react";
 import axios from "axios";
 const Projects = () => {
@@ -19,21 +17,28 @@ const Projects = () => {
 
   return (
     <div className="projects">
-      <Header />
-      <NavBar />
       <div className="main">
         <h1> Projects </h1>{" "}
         <div className="projects-list">
           {" "}
           {projectsList.map((project) => (
             <div key={project._id} className="project-item">
-              <h4>{project.title}</h4>
-              <img src={project.image} alt="image" />
-              <p>{project.description}</p>
-              <p className="link">{project.link}</p>
-              <p className="demo">{project.demo}</p>
+              <h4> {project.title} </h4> <img src={project.image} alt="image" />
+              <p> {project.description} </p>{" "}
+              <p className="link"> {project.link} </p>{" "}
+              <p className="demo"> {project.demo} </p>
+              <span className="pixel-1"> </span>{" "}
+              <span className="pixel-2"> </span>{" "}
+              <span className="pixel-3"> </span>{" "}
+              <span className="pixel-4"> </span>{" "}
+              <span className="pixel-5"> </span>{" "}
+              <span className="pixel-6"> </span>{" "}
+              <span className="pixel-7"> </span>{" "}
+              <span className="pixel-8"> </span>{" "}
+              <span className="pixel-9"> </span>{" "}
+              <span className="pixel-10"> </span>{" "}
             </div>
-          ))}
+          ))}{" "}
         </div>{" "}
       </div>{" "}
     </div>
