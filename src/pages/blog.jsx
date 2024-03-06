@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { FaHeart, FaUser, FaArrowRight } from "react-icons/fa";
 import Loader from "../components/loader";
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 
 const url = "https://digital-website-1.onrender.com";
 
@@ -31,7 +31,7 @@ const Blog = () => {
     alert(message);
   };
 
-  const addComment = async (blogId, index) => {
+  const addComment = async (blogId) => {
     if (sessionStorage.getItem("signedIn") !== "true") {
       showAlert("Please sign in to add a comment", "error");
       return;
