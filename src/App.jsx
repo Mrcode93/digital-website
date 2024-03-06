@@ -6,18 +6,13 @@ import { Routes, Route } from "react-router-dom";
 import Contacts from "./pages/contacts.jsx";
 import Projects from "./pages/projects.jsx";
 import Upload from "./pages/upload";
-import { useEffect, useRef } from "react";
-import Effect from "../src/assets/mario-welcome.mp3";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
+import Form from "./pages/Form";
+import Login from "./components/Login";
+import Signup from "./components/SignUp";
 
 function App() {
-  const audioRef = useRef(null);
-  useEffect(() => {
-    const audio = new Audio(Effect);
-    audioRef.current = audio;
-    audio.play();
-  }, []);
   return (
     <>
       <Header />
@@ -28,8 +23,11 @@ function App() {
         <Route path="/services" element={<Services />} />{" "}
         <Route path="/skills" element={<Skills />} />{" "}
         <Route path="/contacts" element={<Contacts />} />{" "}
-        <Route path="/projects" element={<Projects />} />{" "}
         <Route path="/upload" element={<Upload />} />{" "}
+        <Route path="/projects" element={<Projects />} />{" "}
+        <Route path="/form" element={<Form />} />{" "}
+        <Route path="/login" element={<Login />} />{" "}
+        <Route path="/signup" element={<Signup />} />{" "}
       </Routes>{" "}
     </>
   );

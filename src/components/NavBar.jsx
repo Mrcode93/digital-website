@@ -1,111 +1,22 @@
-// import { useState } from "react";
-// import sound from "../assets/mixkit-hard-pop-click-2364.wav";
-// import { Link } from "react-router-dom";
-// const NavBar = () => {
-//   const [active, setActiveIndex] = useState(null);
-//   const handleClick = (index) => {
-//     setActiveIndex(index);
-//     // Play sound effect
-//     const audio = new Audio(sound);
-//     audio.play();
-//   };
-//   return (
-//     <div className="nav">
-//       <ul>
-//         <Link to="/">
-//           <li
-//             className={active === 0 ? "active" : "not-active"}
-//             onClick={() => handleClick(0)}
-//           >
-//             Home{" "}
-//           </li>{" "}
-//         </Link>{" "}
-//         <Link to="/services">
-//           <li
-//             className={active === 1 ? "active" : "not-active"}
-//             onClick={() => handleClick(1)}
-//           >
-//             Services{" "}
-//           </li>{" "}
-//         </Link>{" "}
-//         <Link to="/projects">
-//           <li className="not-active"> Projects </li>{" "}
-//         </Link>{" "}
-//         <Link to="/blog">
-//           <li
-//             className={active === 2 ? "active" : "not-active"}
-//             onClick={() => handleClick(2)}
-//           >
-//             Blog{" "}
-//           </li>{" "}
-//         </Link>{" "}
-//         <Link to="/skills">
-//           <li
-//             className={active === 4 ? "active" : "not-active"}
-//             onClick={() => handleClick(4)}
-//           >
-//             Skills{" "}
-//           </li>{" "}
-//         </Link>{" "}
-//         <Link to="/contact">
-//           <li
-//             className={active === 3 ? "active" : "not-active"}
-//             onClick={() => handleClick(3)}
-//           >
-//             Contact{" "}
-//           </li>{" "}
-//         </Link>{" "}
-//       </ul>{" "}
-//     </div>
-//   );
-// };
-
-// export default NavBar;
-
-// {
-//   /* <li
-//                 className={active === 1 ? "active" : "not-active"}
-//                 onClick={() => handleClick(1)}
-//               >
-//                 Projects{" "}
-//               </li>{" "}
-//               <li
-//                 className={active === 2 ? "active" : "not-active"}
-//                 onClick={() => handleClick(2)}
-//               >
-//                 Services{" "}
-//               </li>{" "}
-//               <li
-//                 className={active === 3 ? "active" : "not-active"}
-//                 onClick={() => handleClick(3)}
-//               >
-//                 Blog{" "}
-//               </li>{" "}
-//               <li
-//                 className={active === 4 ? "active" : "not-active"}
-//                 onClick={() => handleClick(4)}
-//               >
-//                 Skills{" "}
-//               </li>{" "}
-//               <li
-//                 className={active === 5 ? "active" : "not-active"}
-//                 onClick={() => handleClick(5)}
-//               >
-//                 Contact{" "}
-//               </li>{" "} */
-// }
-
 import { useState, useEffect } from "react";
-import sound from "../assets/light-switch-156813.mp3";
 import { Link, useLocation } from "react-router-dom";
 
 const NavBar = () => {
   const [active, setActiveIndex] = useState(null);
+  const [logedIn, setLogedIn] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     // Extract the section name from the current route
     const section = location.pathname.split("/")[1];
+
+    // check if user already signed in
+    if (sessionStorage.getItem("signedIn") === "true") {
+      console.log("already signed in");
+      setLogedIn(true);
+    } else {
+      setLogedIn(false);
+    }
 
     // Map the section name to the corresponding index in your navigation
     const sectionToIndex = {
@@ -119,13 +30,10 @@ const NavBar = () => {
 
     // Set the active index based on the current section
     setActiveIndex(sectionToIndex[section]);
-  }, [location.pathname]);
+  }, []);
 
   const handleClick = (index) => {
     setActiveIndex(index);
-    // Play sound effect
-    const audio = new Audio(sound);
-    audio.play();
   };
 
   return (
@@ -136,50 +44,94 @@ const NavBar = () => {
             className={active === 0 ? "active" : "not-active"}
             onClick={() => handleClick(0)}
           >
-            Home
-          </li>
-        </Link>
+            Home{" "}
+          </li>{" "}
+        </Link>{" "}
         <Link to="/services">
           <li
             className={active === 1 ? "active" : "not-active"}
             onClick={() => handleClick(1)}
           >
-            Services
-          </li>
-        </Link>
+            Services{" "}
+          </li>{" "}
+        </Link>{" "}
         <Link to="/projects">
           <li
             className={active === 2 ? "active" : "not-active"}
             onClick={() => handleClick(2)}
           >
-            Projects
-          </li>
-        </Link>
+            Projects{" "}
+          </li>{" "}
+        </Link>{" "}
         <Link to="/blog">
           <li
             className={active === 3 ? "active" : "not-active"}
             onClick={() => handleClick(3)}
           >
-            Blog
-          </li>
-        </Link>
+            Blog{" "}
+          </li>{" "}
+        </Link>{" "}
         <Link to="/skills">
           <li
             className={active === 4 ? "active" : "not-active"}
             onClick={() => handleClick(4)}
           >
-            Skills
-          </li>
-        </Link>
+            Skills{" "}
+          </li>{" "}
+        </Link>{" "}
         <Link to="/contacts">
           <li
             className={active === 5 ? "active" : "not-active"}
             onClick={() => handleClick(5)}
           >
-            Contact
+            Contact{" "}
+          </li>{" "}
+        </Link>{" "}
+        {logedIn ? (
+          <li>
+            <button
+              onClick={() => {
+                sessionStorage.setItem("signedIn", false);
+                setLogedIn(false);
+                sessionStorage.removeItem("user");
+              }}
+              className="logout-btn"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+                fontSize: "1rem",
+                textAlign: "center",
+                border: "none",
+                background: "none",
+                fontFamily: '"Silkscreen", sans-serif,"',
+                backgroundColor: "#183a37",
+                color: "white",
+                padding: "0.1em 0.2em",
+                // Apply the same styling as the navigation links when hovered
+                ":hover": {
+                  fontSize: "0.9em",
+                  padding: "0.1em 0.2em",
+                  color: "your_cards_color",
+                  backgroundColor: "your_warning_color",
+                },
+              }}
+            >
+              Logout{" "}
+            </button>{" "}
           </li>
-        </Link>
-      </ul>
+        ) : (
+          <Link to="/form">
+            <li
+              className={active === 6 ? "active" : "not-active"}
+              onClick={() => handleClick(6)}
+            >
+              Sign{" "}
+            </li>{" "}
+          </Link>
+        )}{" "}
+      </ul>{" "}
     </div>
   );
 };
