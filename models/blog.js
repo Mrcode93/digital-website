@@ -1,28 +1,3 @@
-// // models/blogModel.js
-// const mongoose = require("mongoose");
-
-// const postSchema = new mongoose.Schema(
-//   {
-//     title: {
-//       type: String,
-//       // required: true,
-//     },
-//     image: {
-//       type: String,
-//     },
-//     description: {
-//       type: String,
-//     },
-//     comments: [],
-//     likes: {},
-//   },
-//   { timestamps: true }
-// );
-
-// const Blog = mongoose.model("blog", postSchema);
-
-// module.exports = Blog;
-
 // models/blogModel.js
 const mongoose = require("mongoose");
 

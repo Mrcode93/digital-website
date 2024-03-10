@@ -30,3 +30,4 @@ app.use("/post", Blog);
 app.use("/project", Project);
 app.use("/user", user);
 app.use("/comment", comments);
+app.use("/uploads", express.static("uploads"));
