@@ -693,7 +693,7 @@ input {
   height: 100%;
   animation: slideUp 0.5s ease-in-out;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
   grid-gap: 1rem;
 }
 .services .main .box {
@@ -1069,10 +1069,16 @@ input {
   grid-gap: 1rem;
   min-height: 300px;
 }
+.projects .main .projects-list a {
+  color: #c44900;
+  text-decoration: none;
+  text-decoration: underline;
+}
 .projects .main .projects-list .project-item {
   background-color: #04151f;
   padding: 1rem;
   margin: 0.5rem;
+  max-width: 100%;
   position: relative;
 }
 .projects .main .projects-list .project-item h4 {
@@ -1081,22 +1087,17 @@ input {
   margin-bottom: 0.5rem;
 }
 .projects .main .projects-list .project-item p {
-  color: #ffffff;
-  font-size: 0.6rem;
+  color: #efd6ac;
+  font-size: 1rem;
   margin-bottom: 0.5rem;
 }
 .projects .main .projects-list .project-item img {
-  width: 100%;
-  margin-bottom: 0.5rem;
-  border-radius: 4px;
+  max-width: 100%;
+  height: auto;
+  transition: all 0.2s ease-in-out;
 }
-.projects .main .projects-list .project-item .project-links a {
-  color: #04151f;
-  margin-right: 0.5rem;
-  text-decoration: none;
-}
-.projects .main .projects-list .project-item .project-links a:hover {
-  text-decoration: underline;
+.projects .main .projects-list .project-item img:hover {
+  box-shadow: 0 0 0 5px #c44900;
 }
 .projects .main .projects-list .project-item .pixel-1 {
   position: absolute;

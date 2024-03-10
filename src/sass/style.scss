@@ -767,7 +767,7 @@ input {
     height: 100%;
     @include animation(slideUp 0.5s ease-in-out);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 2fr));
     grid-gap: 1rem;
     .box {
       position: relative;
@@ -1123,33 +1123,33 @@ input {
       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
       grid-gap: 1rem;
       min-height: 300px;
+      a {
+        color: $warning-color;
+        text-decoration: none;
+        text-decoration: underline;
+      }
       .project-item {
         background-color: $danger-color;
         padding: 1rem;
         margin: 0.5rem;
+        max-width: 100%;
+        // height: 400px;
         h4 {
           color: $warning-color;
           font-size: 1.5rem;
           margin-bottom: 0.5rem;
         }
         p {
-          color: $secondary-color;
-          font-size: 0.6rem;
+          color: $cards-color;
+          font-size: 1rem;
           margin-bottom: 0.5rem;
         }
         img {
-          width: 100%;
-          margin-bottom: 0.5rem;
-          border-radius: 4px;
-        }
-        .project-links {
-          a {
-            color: $danger-color;
-            margin-right: 0.5rem;
-            text-decoration: none;
-            &:hover {
-              text-decoration: underline;
-            }
+          max-width: 100%;
+          height: auto;
+          @include transition(all 0.2s ease-in-out);
+          &:hover {
+            box-shadow: 0 0 0 5px $warning-color;
           }
         }
         position: relative;
