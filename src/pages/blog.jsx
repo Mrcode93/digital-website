@@ -57,21 +57,6 @@ const Blog = () => {
     }
   };
 
-  // const fetchBlogs = () => {
-  //   setLoading(true);
-  //   axios
-  //     .get("/post/blogs")
-  //     .then((res) => {
-  //       setBlogs(res.data);
-  //       setLoading(false);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       setLoading(false);
-  //       showAlert("Error fetching blogs. Please try again.", "error");
-  //     });
-  // };
-
   const fetchBlogs = () => {
     setLoading(true);
     axios

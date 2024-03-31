@@ -1,69 +1,29 @@
-// // projects.jsx
-// import { useState, useEffect } from "react";
-// import axios from "axios";
-// const Projects = () => {
-//   const [projectsList, setProjectsList] = useState([]);
-
-//   useEffect(() => {
-//     axios
-//       .get("http://localhost:8080/project")
-//       .then((res) => {
-//         setProjectsList(res.data);
-//       })
-//       .catch((err) => {
-//         console.log(err);
-//       });
-//   });
-
-//   return (
-//     <div className="projects">
-//       <div className="main">
-//         <h1> Projects </h1>{" "}
-//         <div className="projects-list">
-//           {" "}
-//           {projectsList.map((project) => (
-//             <div key={project._id} className="project-item">
-//               <h4> {project.title} </h4> <img src={project.image} alt="image" />
-//               <p> {project.description} </p>{" "}
-//               <p className="link"> {project.link} </p>{" "}
-//               <p className="demo"> {project.demo} </p>
-//               <span className="pixel-1"> </span>{" "}
-//               <span className="pixel-2"> </span>{" "}
-//               <span className="pixel-3"> </span>{" "}
-//               <span className="pixel-4"> </span>{" "}
-//               <span className="pixel-5"> </span>{" "}
-//               <span className="pixel-6"> </span>{" "}
-//               <span className="pixel-7"> </span>{" "}
-//               <span className="pixel-8"> </span>{" "}
-//               <span className="pixel-9"> </span>{" "}
-//               <span className="pixel-10"> </span>{" "}
-//             </div>
-//           ))}{" "}
-//         </div>{" "}
-//       </div>{" "}
-//     </div>
-//   );
-// };
-
-// export default Projects;
-
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Loader from "../components/loader";
 
 const Projects = () => {
   const [projectsList, setProjectsList] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
+    // Fetch projects from the backend
     axios
-      .get("http://localhost:8080/project")
+      .get("https://digital-website-1.onrender.com/project")
       .then((res) => {
         setProjectsList(res.data);
-        console.log(res.data);
+        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
+        setLoading(false);
       });
   }, []); // Pass an empty dependency array to run the effect only once
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="projects">
@@ -71,13 +31,14 @@ const Projects = () => {
         <h1> Projects </h1>{" "}
         <div className="projects-list">
           {" "}
+          {/* Render the list of projects */}
           {projectsList.map((project) => (
             <div key={project._id} className="project-item">
               <h4> {project.title} </h4>{" "}
               {/* Assuming the 'image' field contains the filename */}{" "}
               <a href={project.demo} target="_blank">
                 <img
-                  src={`http://localhost:8080/uploads/${project.image}`}
+                  src={`https://digital-website.onrender.com/uploads/${project.image}`}
                   alt="Project Image"
                 />
               </a>

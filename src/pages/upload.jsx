@@ -35,11 +35,15 @@ const ProjectForm = () => {
     formData.append("image", projectData.image);
 
     try {
-      await axios.post("http://localhost:8080/project", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      await axios.post(
+        "https://digital-website-1.onrender.com/project",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       console.log("Project created successfully!");
       // You can redirect or perform other actions upon successful submission
     } catch (error) {
@@ -48,7 +52,17 @@ const ProjectForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "10px",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "90vh",
+      }}
+    >
       <label> Title: </label>{" "}
       <input
         type="text"
@@ -78,7 +92,18 @@ const ProjectForm = () => {
       />{" "}
       <label> Image: </label>{" "}
       <input type="file" name="image" onChange={handleImageChange} />{" "}
-      <button type="submit"> Submit </button>{" "}
+      <button
+        type="submit"
+        style={{
+          marginTop: "10px",
+          padding: "10px",
+          borderRadius: "10px",
+          backgroundColor: "black",
+          color: "white",
+        }}
+      >
+        Submit{" "}
+      </button>{" "}
     </form>
   );
 };

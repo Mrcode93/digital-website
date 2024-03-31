@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const url = "https://digital-website-1.onrender.com";
+const url = "https://digital-website.onrender.com";
 const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
