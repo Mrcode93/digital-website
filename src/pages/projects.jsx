@@ -18,7 +18,6 @@ const Projects = () => {
         console.error("Error fetching projects:", err);
         setLoading(false);
       });
-    console.log(projectsList);
   }, []);
 
   if (loading) {
