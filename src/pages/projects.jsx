@@ -10,7 +10,7 @@ const Projects = () => {
     setLoading(true);
     // Fetch projects from the backend
     axios
-      .get("https://digital-website-1.onrender.com/project")
+      .get("https://digital-website.onrender.com/project")
       .then((res) => {
         setProjectsList(res.data);
         setLoading(false);

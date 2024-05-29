@@ -5,7 +5,6 @@ import Skills from "./pages/skills";
 import { Routes, Route } from "react-router-dom";
 import Contacts from "./pages/contacts.jsx";
 import Projects from "./pages/projects.jsx";
-import Upload from "./pages/upload";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import Form from "./pages/Form";
@@ -23,7 +22,6 @@ function App() {
         <Route path="/services" element={<Services />} />{" "}
         <Route path="/skills" element={<Skills />} />{" "}
         <Route path="/contacts" element={<Contacts />} />{" "}
-        <Route path="/upload" element={<Upload />} />{" "}
         <Route path="/projects" element={<Projects />} />{" "}
         <Route path="/form" element={<Form />} />{" "}
         <Route path="/login" element={<Login />} />{" "}

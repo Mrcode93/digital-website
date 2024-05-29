@@ -4,7 +4,7 @@ import { FaHeart, FaUser, FaArrowRight } from "react-icons/fa";
 import Loader from "../components/loader";
 // import Swal from "sweetalert2";
 
-const url = "https://digital-website-1.onrender.com";
+const url = "https://digital-website.onrender.com";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
