@@ -8,7 +8,6 @@ const Projects = () => {
 
   useEffect(() => {
     setLoading(true);
-    // Fetch projects from the backend
     axios
       .get("https://digital-website.onrender.com/project")
       .then((res) => {
@@ -16,10 +15,11 @@ const Projects = () => {
         setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
+        console.error("Error fetching projects:", err);
         setLoading(false);
       });
-  }, []); // Pass an empty dependency array to run the effect only once
+    console.log(projectsList);
+  }, []);
 
   if (loading) {
     return <Loader />;
@@ -31,27 +31,23 @@ const Projects = () => {
         <h1> Projects </h1>{" "}
         <div className="projects-list">
           {" "}
-          {/* Render the list of projects */}
           {projectsList.map((project) => (
             <div key={project._id} className="project-item">
               <h4> {project.title} </h4>{" "}
-              {/* Assuming the 'image' field contains the filename */}{" "}
-              <a href={project.demo} target="_blank">
+              <a href={project.demo} target="_blank" rel="noopener noreferrer">
                 <img
-                  src={`https://digital-website.onrender.com/uploads/${project.image}`}
-                  alt="Project Image"
-                />
-              </a>
+                  src={`https://digital-website.onrender.com/${project.image}`}
+                  alt={project.title}
+                  onError={(e) => {
+                    e.target.onerror = null; // prevents looping
+                    e.target.src = "/path-to-default-image.png"; // replace with path to default image
+                  }}
+                />{" "}
+              </a>{" "}
               <p> {project.description} </p>{" "}
               <a className="link" href={project.link}>
-                Code Link
+                Code Link{" "}
               </a>{" "}
-              {/* The pixel spans - adjust as needed */}{" "}
-              {[...Array(10)].map((_, index) => (
-                <span key={index} className={`pixel-${index + 1}`}>
-                  {" "}
-                </span>
-              ))}{" "}
             </div>
           ))}{" "}
         </div>{" "}
